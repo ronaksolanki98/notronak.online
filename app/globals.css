@@ -43,14 +43,21 @@ body::after {
   }
   
   .text-huge {
-    font-size: clamp(4rem, 15vw, 18rem);
-    line-height: 0.85;
+    font-size: clamp(3rem, 12vw, 15rem);
+    line-height: 0.9;
     letter-spacing: -0.05em;
+    font-weight: 800;
+  }
+
+  .text-title {
+    font-size: clamp(2.5rem, 8vw, 10rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
     font-weight: 800;
   }
   
   .text-micro {
-    font-size: 0.6rem;
+    font-size: clamp(0.5rem, 0.8vw, 0.65rem);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-family: var(--font-mono);
@@ -59,6 +66,13 @@ body::after {
 
   /* Grid spacing utilities */
   .grid-safe-area {
-    padding: clamp(2rem, 8vw, 8rem);
+    padding: clamp(1.5rem, 5vw, 6rem);
+  }
+
+  /* Responsive content constraints */
+  .content-max-w {
+    width: 100%;
+    max-width: min(90vw, 1600px);
+    margin: 0 auto;
   }
 }

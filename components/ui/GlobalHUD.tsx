@@ -44,20 +44,20 @@ export function GlobalHUD() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.5 }}
-      className={`fixed inset-0 pointer-events-none z-50 flex flex-col justify-between p-10 font-mono transition-colors duration-500 ${
+      className={`fixed inset-0 pointer-events-none z-50 flex flex-col justify-between p-4 md:p-10 font-mono transition-colors duration-500 ${
         theme === "light" ? "text-black" : "text-white"
       }`}
     >
       {/* Top Bar */}
       <div className="flex justify-between items-start">
-        <div className="flex gap-16">
+        <div className="flex gap-4 md:gap-16">
            <div className="flex flex-col">
-             <span className={`text-[10px] uppercase tracking-[0.2em] mb-1 transition-opacity ${theme === "light" ? "opacity-60" : "opacity-30"}`}>Engineer</span>
-             <span className="text-xs font-bold tracking-tight">Ronak Solanki © 26</span>
+             <span className={`text-[8px] md:text-[10px] uppercase tracking-[0.2em] mb-1 transition-opacity ${theme === "light" ? "opacity-60" : "opacity-30"}`}>Engineer</span>
+             <span className="text-[10px] md:text-xs font-bold tracking-tight">R. Solanki</span>
            </div>
-           <div className="hidden md:flex flex-col">
-             <span className={`text-[10px] uppercase tracking-[0.2em] mb-1 transition-opacity ${theme === "light" ? "opacity-60" : "opacity-30"}`}>Infrastructure</span>
-             <span className="text-xs font-medium tracking-tight uppercase">{status}</span>
+           <div className="hidden sm:flex flex-col">
+             <span className={`text-[8px] md:text-[10px] uppercase tracking-[0.2em] mb-1 transition-opacity ${theme === "light" ? "opacity-60" : "opacity-30"}`}>Status</span>
+             <span className="text-[10px] md:text-xs font-medium tracking-tight uppercase">{status}</span>
            </div>
            <div className="hidden lg:flex flex-col">
              <span className={`text-[10px] uppercase tracking-[0.2em] mb-1 transition-opacity ${theme === "light" ? "opacity-60" : "opacity-30"}`}>Latency</span>
@@ -73,14 +73,13 @@ export function GlobalHUD() {
       {/* Bottom Bar & Progress */}
       <div className="flex flex-col gap-6">
         <div className="flex justify-between items-end">
-            <div className="flex gap-8 pointer-events-auto">
-                <a href="#" className="text-micro hover:opacity-50 transition-opacity">GITHUB</a>
-                <a href="#" className="text-micro hover:opacity-50 transition-opacity">LINKEDIN</a>
+            <div className="flex gap-8">
+                {/* Links removed here to avoid redundancy with page footer */}
             </div>
             <div className="flex flex-col items-end">
                 <div className="flex items-center gap-2">
                     <span className={`animate-pulse w-1.5 h-1.5 rounded-full ${theme === "light" ? "bg-brand-blue shadow-[0_0_8px_rgba(59,130,246,0.5)]" : "bg-green-400 shadow-[0_0_8px_#4ade80]"}`}></span>
-                    <span className="text-micro font-bold tracking-widest">STABLE v1.4.0</span>
+                    <span className="text-[8px] md:text-micro font-bold tracking-widest">STABLE v1.4.0</span>
                 </div>
             </div>
         </div>

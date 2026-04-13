@@ -44,19 +44,19 @@ export function WindowCard({ title, children, className = "", delay = 0 }: Windo
       viewport={{ once: true }}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       transition={{ delay, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative group rounded-[32px] border-[0.5px] border-white/10 bg-white/[0.03] p-8 backdrop-blur-3xl shadow-[0_32px_120px_-20px_rgba(0,0,0,0.5)] hover:shadow-[0_48px_140px_-20px_rgba(0,0,0,0.7)] transition-all duration-700 ${className}`}
+      className={`relative group rounded-[24px] md:rounded-[32px] border-[0.5px] border-white/10 bg-white/[0.03] p-6 md:p-8 backdrop-blur-3xl shadow-[0_32px_120px_-20px_rgba(0,0,0,0.5)] hover:shadow-[0_48px_140px_-20px_rgba(0,0,0,0.7)] transition-all duration-700 overflow-hidden flex flex-col ${className}`}
     >
       {/* Subtle Inner Glow Border */}
-      <div className="absolute inset-0 rounded-[32px] border border-white/5 pointer-events-none" />
+      <div className="absolute inset-0 rounded-[24px] md:rounded-[32px] border border-white/5 pointer-events-none" />
       
       {/* Hover Highlight (Flash) */}
       <motion.div 
-        className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+        className="absolute inset-0 rounded-[24px] md:rounded-[32px] bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"
         style={{ transform: "translateZ(10px)" }}
       />
 
       {title && (
-        <div className="relative mb-8 flex items-center justify-between border-b border-white/5 pb-5" style={{ transform: "translateZ(20px)" }}>
+        <div className="relative mb-6 md:mb-8 flex items-center justify-between border-b border-white/5 pb-4 md:pb-5 shrink-0" style={{ transform: "translateZ(20px)" }}>
           <div className="flex gap-2">
             <div className="h-2 w-2 rounded-full bg-white/5 group-hover:bg-red-500/30 transition-colors" />
             <div className="h-2 w-2 rounded-full bg-white/5 group-hover:bg-yellow-500/30 transition-colors" />
@@ -67,7 +67,7 @@ export function WindowCard({ title, children, className = "", delay = 0 }: Windo
         </div>
       )}
       
-      <div className="relative z-10" style={{ transform: "translateZ(30px)" }}>
+      <div className="relative z-10 flex-1 overflow-y-auto no-scrollbar scroll-smooth" style={{ transform: "translateZ(30px)" }}>
         {children}
       </div>
     </motion.div>
